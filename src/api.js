@@ -16,32 +16,23 @@ const Data = () => {
           url,
           headers: {},
         });
-        setData(result.data);
+        setData(result.data.data);
+
       } catch (error) {
         setIsError(true);
       }
       setIsLoading(false);
     };
     fetchData();
-  }, []);
 
-  console.log(data)
+  }, []);
+  // const { Fajr } = data.timings
   return (
     <div>
-      {isError && <div>Something went wrong...</div>}
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-          <ul>
-            {Object.keys(data).map(item => (
-              <ul key={item}>
-                <li>{item}</li>
-              </ul>
-            ))}
-          </ul>
-        )
-      }
-    </div >
+      <ul>
+        <li>{Fajr}</li>
+      </ul>
+    </div>
   );
 };
 
