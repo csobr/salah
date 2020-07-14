@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const Data = () => {
   const [data, setData] = useState([]);
-  const [url, setUrl] = useState('http://api.aladhan.com/v1/timingsByCity?city=Stockholm&country=Sweden&method=8');
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -13,11 +12,9 @@ const Data = () => {
       try {
         const result = await axios({
           method: 'get',
-          url,
-          headers: {},
+          url: 'http://api.aladhan.com/v1/timingsByCity?city=Stockholm&country=Sweden&method=8',
         });
         setData(result.data.data);
-
       } catch (error) {
         setIsError(true);
       }
@@ -25,15 +22,29 @@ const Data = () => {
     };
     fetchData();
 
-  }, []);
-  // const { Fajr } = data.timings
+  }, [])
+  const timings = { ...data.timings }
   return (
-    <div>
-      <ul>
-        <li>{Fajr}</li>
-      </ul>
-    </div>
+    <>
+      {isError && <div> Something went wrong</div>}
+      {
+        isLoading ? (
+          <div>Loading...</div>
+        ) : (
+            < div >
+              <ul>
+                <li>{timings.Fajr}</li>
+                <li>{timings.Dhuhr}</li>
+                <li>{timings.Asr}</li>
+                <li>{timings.Maghrib}</li>
+                <li>{timings.Isha}</li>
+              </ul>
+            </div >
+          )
+      }
+    </>
   );
+
 };
 
 export default Data;
