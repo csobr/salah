@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 const Data = () => {
     const [data, setData] = useState([])
-    const url =
-        'http://api.aladhan.com/v1/timingsByCity?&city=gislaved&country=sweden&method=8'
-
-    const [city, setCity] = useState(undefined)
-    const [country, setCountry] = useState(undefined)
+    const [city, setCity] = useState('')
+    const [country, setCountry] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [isError, setIsError] = useState(false)
     const handleSubmit = (e) => {
@@ -14,32 +11,31 @@ const Data = () => {
         localStorage.setItem('Country', country)
         e.preventDefault()
     }
-
-    const params = new URLSearchParams(url)
-    params.set('city', city)
-    params.set('country', country)
-    // console.log(params.toString())
-
+    const url = new URL(
+        'http://api.aladhan.com/v1/timingsByCity?&city=&country=&method=8'
+    )
+    const params = [
+        ['city', city || localStorage.getItem('City')],
+        ['country', country || localStorage.getItem('Country')],
+    ]
+    url.search = new URLSearchParams(params).toString()
     useEffect(() => {
         const fetchData = async () => {
-            setIsError(false)
-            setIsLoading(true)
             if (localStorage['Data']) {
                 setData(JSON.parse(localStorage.getItem('Data')))
-                setIsLoading(false)
             } else {
-                alert('request')
+                setIsError(false)
+                setIsLoading(true)
+                console.log('request')
                 try {
-                    const result = await axios({
-                        method: 'get',
-                        url: url,
-                    })
-                    localStorage.setItem(
-                        'Data',
-                        JSON.stringify(result.data.data)
+                    const result = await axios.get(url)
+                    setData(
+                        result.data.data,
+                        localStorage.setItem(
+                            'Data',
+                            JSON.stringify(result.data.data)
+                        )
                     )
-
-                    setData(result.data.data)
                 } catch (error) {
                     setIsError(true)
                 }
@@ -57,11 +53,12 @@ const Data = () => {
         storedValues()
         fetchData()
     }, [])
-
     const timings = { ...data.timings }
     return (
         <>
-            <h1>City</h1>
+            <h1>
+                {city},{country}
+            </h1>
             {isError && <div> Something went wrong</div>}
             {isLoading ? (
                 <div>Loading...</div>
@@ -80,14 +77,14 @@ const Data = () => {
                 <label htmlFor="City">
                     <input
                         type="text"
-                        value={city}
+                        defaultValue=""
                         onChange={(e) => setCity(e.target.value)}
                     ></input>
                 </label>
                 <label htmlFor="Country">
                     <input
                         type="text"
-                        value={country}
+                        defaultValue=""
                         onChange={(e) => setCountry(e.target.value)}
                     ></input>
                 </label>
