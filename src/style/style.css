@@ -1,0 +1,14 @@
+/* *,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+} */
+html,
+body {
+    box-sizing: initial;
+    box-sizing: border-box;
+}
+.pac-container {
+    z-index: 9999 !important;
+}
