@@ -12,7 +12,7 @@ const SalatTimes = () => {
 
     React.useEffect(() => {
         const url = new URL(
-            `http://api.aladhan.com/v1/timingsByCity?&city=&country=&method=8`
+            `http://api.aladhan.com/v1/timingsByCity?&city=london&country=uk&method=8`
         )
         const params = [
             ['city', city],
@@ -22,6 +22,7 @@ const SalatTimes = () => {
         const fetchData = async () => {
             setIsError(false)
             setIsLoading(true)
+
             if (localStorage['Data']) {
                 setData(JSON.parse(localStorage.getItem('Data')))
                 setIsLoading(false)
@@ -73,7 +74,7 @@ const SalatTimes = () => {
                 type="text"
                 ref={autoCompleteRef}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Type your location.."
+                placeholder="Type your city.."
                 value={query}
                 autoComplete="on"
             />
