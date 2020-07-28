@@ -1,33 +1,40 @@
 const electron = require('electron')
 const isDev = require('electron-is-dev')
 
-const { app, BrowserWindow, Tray, Menu } = require('electron')
-
-function createWindow() {
-    let win = new BrowserWindow()
+const { app, BrowserWindow, Tray } = require('electron')
+let tray
+let win
+app.on('ready', () => {
+    win = new BrowserWindow({
+        height: 300,
+        width: 200,
+        frame: false,
+        resizable: false,
+        show: false,
+    })
     const startURL = isDev
         ? 'http://localhost:3000'
         : `file://${path.join(__dirname, 'index.html')}`
     win.loadURL(startURL)
 
-    win.webContents.openDevTools()
-}
-// sec
+    // win.webContents.openDevTools()
 
-let tray = null
-app.whenReady().then(() => {
     tray = new Tray('assets/moske.png')
-    const contextMenu = Menu.buildFromTemplate([
-        { label: 'Fajr', type: 'radio', checked: true },
-        { label: 'Sunrise', type: 'radio' },
-        { label: 'Dhuur', type: 'radio' },
-        { label: 'Asr', type: 'radio' },
-        { label: 'Maghrib', type: 'radio' },
-        { label: 'Isha', type: 'radio' },
-    ])
-    contextMenu.items[1].checked = false
-    tray.setToolTip('Bön')
-    tray.setContextMenu(contextMenu)
+    tray.on('click', (event, bounds) => {
+        const { x, y } = bounds
+        const { height, width } = win.getBounds()
+        if (win.isVisible()) {
+            win.hide()
+        } else {
+            win.setBounds({
+                x: x - width / 2,
+                y,
+                height,
+                width,
+            })
+            win.show()
+        }
+    })
 })
 
 app.on('window-all-closed', () => {

@@ -1,3 +1,3 @@
 # Salat
 
-Prayer times via tray menu.
+Prayer times via system tray.
