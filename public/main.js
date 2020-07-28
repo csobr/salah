@@ -12,6 +12,8 @@ function createWindow() {
 
     win.webContents.openDevTools()
 }
+// sec
+
 let tray = null
 app.whenReady().then(() => {
     tray = new Tray('assets/moske.png')
