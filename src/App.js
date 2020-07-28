@@ -1,10 +1,10 @@
 import React from 'react'
-import Data from './Data'
+import SalatTimes from './SalatTimes'
 export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Data />
+                <SalatTimes />
             </div>
         )
     }
