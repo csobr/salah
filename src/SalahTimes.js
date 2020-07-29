@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import SearchInput from './SearchInput'
 
-const SalatTimes = () => {
+const SalahTimes = () => {
     const [{ autoCompleteRef, query, setQuery, city, country }] = SearchInput()
     const [data, setData] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(false)
@@ -79,4 +79,4 @@ const SalatTimes = () => {
     )
 }
 
-export default SalatTimes
+export default SalahTimes

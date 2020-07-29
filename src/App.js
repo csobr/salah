@@ -1,10 +1,10 @@
 import React from 'react'
-import SalatTimes from './SalatTimes'
+import SalahTimes from './SalahTimes'
 export default class App extends React.Component {
     render() {
         return (
             <div>
-                <SalatTimes />
+                <SalahTimes />
             </div>
         )
     }
