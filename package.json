@@ -16,10 +16,10 @@
     },
     "postinstall": "electron-builder install-app-deps",
     "build": {
-        "appId": "com.example.app",
+        "appId": "com.salah.app",
         "productName": "SalatTimes",
         "mac": {
-            "category": "your.app.category.type"
+            "category": "salah.category.lifestyle"
         }
     },
     "keywords": [],
