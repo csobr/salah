@@ -2,7 +2,7 @@ const electron = require('electron')
 
 const { app, Tray, Menu } = electron
 
-class SalatTray extends Tray {
+class SalahTray extends Tray {
     constructor(iconPath, win) {
         super(iconPath)
 
@@ -38,4 +38,4 @@ class SalatTray extends Tray {
         this.popUpContextMenu(exitMenu)
     }
 }
-module.exports = SalatTray
+module.exports = SalahTray
