@@ -49,11 +49,17 @@ const SalatTimes = () => {
     }, [city, country])
 
     return (
-        <>
+        <div className="container">
+            <input
+                type="text"
+                ref={autoCompleteRef}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Type your location.."
+                value={query}
+                autoComplete="on"
+            />
             <h1>
-                {city}
-                {'\n'}
-                {country}
+                {city},{country}
             </h1>
             {isError && <div> Something went wrong</div>}
             {isLoading ? (
@@ -61,24 +67,15 @@ const SalatTimes = () => {
             ) : (
                 <div>
                     <ul>
-                        <li>{timings.Fajr}</li>
-                        <li>{timings.Dhuhr}</li>
-                        <li>{timings.Asr}</li>
-                        <li>{timings.Maghrib}</li>
-                        <li>{timings.Isha}</li>
+                        <li>Fajr: {timings.Fajr}</li>
+                        <li>Dhu: {timings.Dhuhr}</li>
+                        <li>Asr: {timings.Asr}</li>
+                        <li>Mag: {timings.Maghrib}</li>
+                        <li>Isha: {timings.Isha}</li>
                     </ul>
                 </div>
             )}
-
-            <input
-                type="text"
-                ref={autoCompleteRef}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Type your city.."
-                value={query}
-                autoComplete="on"
-            />
-        </>
+        </div>
     )
 }
 

@@ -1,13 +1,52 @@
-/* *,
+*,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
-} */
+}
+:root {
+    font-size: 62.5%;
+}
 html,
 body {
     box-sizing: initial;
     box-sizing: border-box;
+    font-size: 1.6rem;
+    color: #edeae5;
+    background-color: #0e0e0e;
+    font-family: sans-serif;
+}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+}
+h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-weight: 900;
+}
+li {
+    list-style: none;
+    letter-spacing: 0.08rem;
+    padding: 0.5rem;
+    font-size: 3.3rem;
+    font-weight: 900;
+}
+input {
+    margin-bottom: 0.5rem;
+    background-color: #202020;
+    color: #edeae5;
+    height: 3.4rem;
+    width: 90%;
+    border: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    outline: none;
 }
 .pac-container {
     z-index: 9999 !important;
