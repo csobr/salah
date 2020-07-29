@@ -2,7 +2,7 @@
     "name": "SalatTimes",
     "version": "1.0.0",
     "description": "",
-    "main": "public/main.js",
+    "main": "app/main.js",
     "homepage": "./",
     "scripts": {
         "react-start": "react-scripts start",
@@ -10,7 +10,17 @@
         "release": "yarn react.build && electron-builder --publish=always",
         "test": "echo \"Error: no test specified\" && exit 1",
         "eject": "react-scripts eject",
-        "start": "concurrently \"yarn react-start \" \"wait-on http://localhost:3000 && electron .\""
+        "start": "concurrently \"yarn react-start \" \"wait-on http://localhost:3000 && electron .\"",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "postinstall": "electron-builder install-app-deps",
+    "build": {
+        "appId": "com.example.app",
+        "productName": "SalatTimes",
+        "mac": {
+            "category": "your.app.category.type"
+        }
     },
     "keywords": [],
     "author": "Siham Hadi",

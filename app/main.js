@@ -9,6 +9,9 @@ let win
 const iconPath = path.join(__dirname, `../assets/icon.png`)
 app.on('ready', () => {
     win = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true,
+        },
         height: 250,
         width: 200,
         frame: false,
