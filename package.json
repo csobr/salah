@@ -1,5 +1,5 @@
 {
-    "name": "Salat",
+    "name": "SalatTimes",
     "version": "1.0.0",
     "description": "",
     "main": "public/main.js",
@@ -13,7 +13,7 @@
         "start": "concurrently \"yarn react-start \" \"wait-on http://localhost:3000 && electron .\""
     },
     "keywords": [],
-    "author": "",
+    "author": "Siham Hadi",
     "license": "ISC",
     "devDependencies": {
         "concurrently": "^5.2.0",

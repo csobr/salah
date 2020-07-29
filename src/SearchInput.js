@@ -52,9 +52,11 @@ async function handlePlaceSelect(updateQuery, updateCity, updateCountry) {
 
 function SearchLocation() {
     const [query, setQuery] = React.useState('')
-    const [city, setCity] = React.useState(localStorage.getItem('City') || '')
+    const [city, setCity] = React.useState(
+        localStorage.getItem('City') || 'sweden'
+    )
     const [country, setCountry] = React.useState(
-        localStorage.getItem('Country') || ''
+        localStorage.getItem('Country') || 'stockholm'
     )
     const autoCompleteRef = React.useRef(null)
     React.useEffect(() => {

@@ -6,6 +6,7 @@ const SalatTray = require('./tray')
 const { app, BrowserWindow, Tray, Menu } = require('electron')
 let tray
 let win
+const iconPath = path.join(__dirname, `../assets/icon.png`)
 app.on('ready', () => {
     win = new BrowserWindow({
         height: 300,
@@ -13,7 +14,6 @@ app.on('ready', () => {
         frame: false,
         resizable: false,
         show: false,
-        title: 'Salat',
     })
     const startURL = isDev
         ? 'http://localhost:3000'
@@ -22,8 +22,5 @@ app.on('ready', () => {
     win.on('blur', () => {
         win.hide()
     })
-
-    // win.webContents.openDevTools()
-    const iconPath = path.join(__dirname, `../assets/icon.png`)
     tray = new SalatTray(iconPath, win)
 })
