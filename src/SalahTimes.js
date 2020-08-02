@@ -57,6 +57,7 @@ const SalahTimes = () => {
                 placeholder="Type your location.."
                 value={query}
                 autoComplete="on"
+                data-testid="input-query"
             />
             <h1>
                 {city},{country}

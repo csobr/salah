@@ -8,7 +8,7 @@
         "react-start": "react-scripts start",
         "build": "yarn react-build && yarn electron-build",
         "release": "yarn react.build && electron-builder --publish=always",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "react-scripts test",
         "eject": "react-scripts eject",
         "start": "concurrently \"cross-env BROWSER=none yarn react-start \" \"wait-on http://localhost:3000 && electron .\"",
         "pack": "electron-builder --dir",
@@ -26,6 +26,8 @@
     "author": "Siham Hadi",
     "license": "ISC",
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.2",
+        "@testing-library/react": "^10.4.7",
         "concurrently": "^5.2.0",
         "cross-env": "^7.0.2",
         "electron": "^9.1.0",
