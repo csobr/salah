@@ -12,11 +12,12 @@ const SalahTimes = () => {
 
     React.useEffect(() => {
         const url = new URL(
-            `http://api.aladhan.com/v1/timingsByCity?&city=london&country=uk&method=8`
+            `http://api.aladhan.com/v1/timingsByCity?&city=&country=&method=`
         )
         const params = [
             ['city', city],
             ['country', country],
+            ['method', '4'],
         ]
         url.search = new URLSearchParams(params).toString()
         const fetchData = async () => {
