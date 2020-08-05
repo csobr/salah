@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent, queryByTestId } from '@testing-library/react'
-import SearchTimes from '../SalahTimes'
+import { SearchTimes } from '../SalahTimes'
 
 it('Renders correctly', async () => {
     const { queryByTestId } = render(<SearchTimes />)
@@ -15,4 +15,8 @@ describe('Input value', () => {
 
         expect(searchInput.value).toBe('test')
     })
+})
+
+test('Loads correctly', async () => {
+    render(<SearchTimes />)
 })

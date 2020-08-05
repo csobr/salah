@@ -27,13 +27,14 @@
     "license": "ISC",
     "devDependencies": {
         "@testing-library/jest-dom": "^5.11.2",
-        "@testing-library/react": "^10.4.7",
+        "@testing-library/react": "^10.4.8",
         "concurrently": "^5.2.0",
         "cross-env": "^7.0.2",
-        "electron": "^9.1.0",
-        "electron-builder": "^22.7.0",
+        "electron": "^9.1.2",
+        "electron-builder": "^22.8.0",
+        "msw": "^0.20.2",
         "prettier": "2.0.5",
-        "wait-on": "^5.0.3"
+        "wait-on": "^5.1.0"
     },
     "dependencies": {
         "axios": "^0.19.2",
