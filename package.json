@@ -1,7 +1,7 @@
 {
     "name": "SalahTimes",
     "version": "1.0.0",
-    "description": "",
+    "description": "Salah times",
     "main": "app/main.js",
     "homepage": "./",
     "scripts": {
