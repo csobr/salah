@@ -1,6 +1,15 @@
 import React from 'react'
-import { render, fireEvent, queryByTestId } from '@testing-library/react'
-import { SearchTimes } from '../SalahTimes'
+import {
+    render,
+    fireEvent,
+    queryByTestId,
+    screen,
+} from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import { setupServer } from 'msw/node'
+import { rest } from 'msw'
+import SearchTimes from '../SalahTimes'
+import { url } from '../SalahTimes'
 
 it('Renders correctly', async () => {
     const { queryByTestId } = render(<SearchTimes />)
@@ -19,4 +28,22 @@ describe('Input value', () => {
 
 test('Loads correctly', async () => {
     render(<SearchTimes />)
+})
+
+// Fetch
+const server = setupServer(
+    rest.get(url, (req, res, ctx) => {
+        return res(ctx.json())
+    })
+)
+
+test('Loads and display greeting', async () => {
+    render(<SearchTimes url />)
+})
+test('handle server errors', async () => {
+    server.use(
+        rest.get(url, (req, res, ctx) => {
+            return res(ctx.status(500))
+        })
+    )
 })
