@@ -1,11 +1,12 @@
 {
-    "name": "SalahTimes",
+    "name": "salahtimes",
     "version": "1.0.0",
     "description": "Salah times",
-    "main": "app/main.js",
+    "main": "public/electron.js",
     "homepage": "./",
     "scripts": {
         "react-start": "react-scripts start",
+        "react-build": "react-scripts build",
         "build": "yarn react-build && yarn electron-build",
         "release": "yarn react.build && electron-builder --publish=always",
         "test": "react-scripts test",
@@ -18,8 +19,13 @@
     "build": {
         "appId": "com.salah.app",
         "productName": "SalahTimes",
+        "files": [
+            "./dist/**/*",
+            "node_modules/**/*"
+        ],
         "mac": {
-            "category": "salah.category.lifestyle"
+            "category": "salah.category.lifestyle",
+            "icon": "./icon.png"
         }
     },
     "keywords": [],

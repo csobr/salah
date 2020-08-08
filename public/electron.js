@@ -3,10 +3,9 @@ const electron = require('electron')
 const isDev = require('electron-is-dev')
 const SalatTray = require('./tray')
 
-const { app, BrowserWindow, Tray, Menu } = require('electron')
-let tray
+const { app, BrowserWindow } = require('electron')
 let win
-const iconPath = path.join(__dirname, `../assets/icon.png`)
+const iconPath = path.join(__dirname, `../assets/menuicon.png`)
 app.on('ready', () => {
     win = new BrowserWindow({
         webPreferences: {
