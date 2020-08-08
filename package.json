@@ -25,7 +25,7 @@
         ],
         "mac": {
             "category": "salah.category.lifestyle",
-            "icon": "./icon.png"
+            "icon": "./assets/icon.png"
         }
     },
     "keywords": [],
