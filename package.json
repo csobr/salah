@@ -17,14 +17,11 @@
     },
     "postinstall": "electron-builder install-app-deps",
     "build": {
-        "appId": "com.salah.app",
+        "appId": "com.salahtimes.app",
         "productName": "SalahTimes",
         "files": [
             "./dist/**/*",
             "node_modules/**/*"
-        ],
-        "directories" :[
- 
         ],
         "mac": {
             "category": "salah.category.lifestyle",
