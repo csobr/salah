@@ -5,7 +5,7 @@ const SalatTray = require('./tray')
 
 const { app, BrowserWindow } = require('electron')
 let win
-const iconPath = path.join(__dirname, `./menuicon.png`)
+const iconPath = path.join(__dirname, `./favicon.png`)
 app.on('ready', () => {
     win = new BrowserWindow({
         webPreferences: {
