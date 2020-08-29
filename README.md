@@ -1,5 +1,10 @@
-# Salah
+# SalahTimes
 
-Prayer times via menu.
+Prayer times from the desktop.
 
-![alt text](/salah.gif)
+## Built With
+
+[Electron.js](https://www.electronjs.org/)
+
+![salahtimes](/salahtimes.jpg)
+![salahtimes](/salah.gif)
