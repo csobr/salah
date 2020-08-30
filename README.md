@@ -6,5 +6,7 @@ Prayer times from the desktop.
 
 [Electron.js](https://www.electronjs.org/)
 
-![salahtimes](/salahtimes.jpg)
-![salahtimes](/salah.gif)
+
+<img src= "salahtimes.jpg" alt = "product" width= "300"/>
+<img src ="salah.gif" width= "200" />
+
