@@ -32,22 +32,22 @@
     "author": "Siham Hadi",
     "license": "ISC",
     "devDependencies": {
-        "@testing-library/jest-dom": "^5.11.2",
-        "@testing-library/react": "^10.4.8",
-        "concurrently": "^5.3.0",
-        "cross-env": "^7.0.2",
-        "electron": "^15.5.5",
-        "electron-builder": "^22.8.0",
-        "msw": "^0.20.3",
-        "prettier": "2.0.5",
-        "wait-on": "^5.1.0"
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "concurrently": "^7.4.0",
+        "cross-env": "^7.0.3",
+        "electron": "^20.2.0",
+        "electron-builder": "^23.3.3",
+        "msw": "^0.47.3",
+        "prettier": "^2.7.1",
+        "wait-on": "^6.0.1"
     },
     "dependencies": {
-        "axios": "^0.21.2",
-        "electron-is-dev": "^1.2.0",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-router-dom": "^5.2.0",
+        "axios": "^0.27.2",
+        "electron-is-dev": "^2.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.1",
         "react-scripts": "^5.0.1"
     },
     "browserslist": {
